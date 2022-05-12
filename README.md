@@ -1,5 +1,13 @@
 # workshop-excercises-docker
 
+Comando para crear la newtork de nginx
+
+docker network create --driver=bridge nginx
+
+Comando para crear el contenedor de nginx
+
+docker container run -p 80:80 --name nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock:ro --net nginx -d jwilder/nginx-proxy
+
 Ejercicio - Parte 1
 
 Se re requiere dockerizar un nuevo microservicio hecho en NodeJS, al cual se debe poder acceder a travez del navegador mediante una url determinada, el servidor de la aplicación NodeJs esta escuchando en el puerto 3000, el codigo del microservicio lo podemos encontrar en el siguiente repositorio.
