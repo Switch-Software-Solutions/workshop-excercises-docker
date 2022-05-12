@@ -1,10 +1,10 @@
 # workshop-excercises-docker
 
-Comando para crear la newtork de nginx
+Comando para crear la newtork de nginx:
 
 docker network create --driver=bridge nginx
 
-Comando para crear el contenedor de nginx
+Comando para crear el contenedor de nginx:
 
 docker container run -p 80:80 --name nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock:ro --net nginx -d jwilder/nginx-proxy
 
@@ -19,4 +19,4 @@ En este caso el motor seleccionado será MYSQL.
 Requisitos fundamentales: 
   1 - Que los datos del contenedor de mysql  se persistan una vez el contenedor se baja
   2 - Que ambos contenedores puedan comunicarse entre sí.
-  3 - Que la base de datos NO pueda ser accedida a travez de internet por estricta seguridad de los datos
+  3 - Que la base de datos NO pueda ser accedida por otro contenedor que no sea el microservicio
