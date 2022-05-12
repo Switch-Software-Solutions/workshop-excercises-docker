@@ -2,15 +2,16 @@
 
 Comando para crear la newtork de nginx:
 
-`
-  docker network create --driver=bridge nginx
-`
+```
+docker network create --driver=bridge nginx
+```
+
 
 Comando para crear el contenedor de nginx:
 
-`
-  docker container run -p 80:80 --name nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock:ro --net nginx -d jwilder/nginx-proxy
-`
+```
+docker container run -p 80:80 --name nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock:ro --net nginx -d jwilder/nginx-proxy
+```
 
 ---
 
@@ -24,6 +25,7 @@ Se re requiere dockerizar un nuevo microservicio hecho en NodeJS, al cual se deb
 
 Se requiere armar un archivo docker-compose.yml, el cual permita levantar el microservicio creado anteriormente  junto con un contenedor de base de datos. 
 En este caso el motor seleccionado será MYSQL.
+
 Requisitos fundamentales: 
 1.   Que los datos del contenedor de mysql  se persistan una vez el contenedor se baja
 2.   Que ambos contenedores puedan comunicarse entre sí.
